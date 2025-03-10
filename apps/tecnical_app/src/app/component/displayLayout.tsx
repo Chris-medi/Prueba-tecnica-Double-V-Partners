@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 import { useItemStore } from "../../../state/global"
 import { requestSearchNameS } from "../../../api/global"
@@ -13,9 +13,19 @@ export default function ({ initial_items }:{initial_items: Item[] | []}) {
 
   const items = useItemStore((state) => state.items)
   const setItems = useItemStore((state) => state.setItems)
+
+  const [hydrated, setHydrated] = useState(false);
+
   useEffect(() => {
-    setItems(initial_items)
-  }, [setItems, initial_items])
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (hydrated && items.length == 0) {
+      console.log("Inicializando items...");
+      setItems(initial_items);
+    }
+  }, [setItems, initial_items, items, hydrated])
 
    function searchName(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()

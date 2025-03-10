@@ -36,6 +36,7 @@ The project is organized as follows:
 
 - Node.js (20 LTS version recommended)
 - npm or yarn package manager
+- WSL 2
 
 ### Installation
 
@@ -50,7 +51,7 @@ cd Prueba-tecnica-Double-V-Partners
 
 2. Install dependencies:
 ```bash
-npm install
+npm install --force
 ```
 
 ### Running the Applications

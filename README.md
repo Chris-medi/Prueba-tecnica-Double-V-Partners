@@ -42,7 +42,7 @@ The project is organized as follows:
 1. Clone the repository
 ```bash
 git clone https://github.com/Chris-medi/Prueba-tecnica-Double-V-Partners.git
-
+```
 2. Go to folder
 ```bash
 cd Prueba-tecnica-Double-V-Partners

@@ -1,16 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DetailsComponentComponent } from './details.component';
+import { DetailsComponent } from './details.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
+
 
 describe('DetailsComponentComponent', () => {
-  let component: DetailsComponentComponent;
-  let fixture: ComponentFixture<DetailsComponentComponent>;
+  let component: DetailsComponent;
+  let fixture: ComponentFixture<DetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DetailsComponentComponent],
+      imports: [DetailsComponent],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DetailsComponentComponent);
+    fixture = TestBed.createComponent(DetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -19,3 +26,4 @@ describe('DetailsComponentComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

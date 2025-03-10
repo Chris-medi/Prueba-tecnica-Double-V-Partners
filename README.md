@@ -34,7 +34,7 @@ The project is organized as follows:
 
 ### Prerequisites
 
-- Node.js (Latest LTS version recommended)
+- Node.js (20 LTS version recommended)
 - npm or yarn package manager
 
 ### Installation
